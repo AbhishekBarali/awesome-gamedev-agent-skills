@@ -1,0 +1,24 @@
+{
+  "name": "gamedev-skills-builder",
+  "description": "Builder agent for the awesome-gamedev-agent-skills repo. Loads start-of-session git context and guards against destructive git commands while authoring skills.",
+  "tools": ["read", "write", "shell", "grep", "glob", "code", "subagent"],
+  "allowedTools": ["read", "grep", "glob", "code"],
+  "resources": [
+    "file://.kiro/steering/**/*.md",
+    "file://docs/SKILL-FORMAT.md",
+    "skill://skills/**/SKILL.md",
+    "skill://router/SKILL.md"
+  ],
+  "hooks": {
+    "agentSpawn": [
+      { "command": "git log --oneline -12" },
+      { "command": "git status --short" }
+    ],
+    "preToolUse": [
+      { "matcher": "shell", "command": "python scripts/guard.py" }
+    ],
+    "stop": [
+      { "command": "git status --short" }
+    ]
+  }
+}

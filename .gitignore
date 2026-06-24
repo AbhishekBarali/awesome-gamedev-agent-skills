@@ -1,0 +1,33 @@
+# ─────────────────────────────────────────────────────────────
+# LOCAL-ONLY: orchestration & growth strategy (never published)
+# These are how-we-build / how-we-grow files. They are NOT product.
+# ─────────────────────────────────────────────────────────────
+/plan/
+*.local.md
+GAMEDEV-SKILLS-PLAN.md
+
+# Parallel-session git worktrees (see plan/00-MASTER-PLAN.md §Git strategy)
+/.worktrees/
+/gds-S*/
+
+# ─────────────────────────────────────────────────────────────
+# OS / editor noise
+# ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# ─────────────────────────────────────────────────────────────
+# Tooling / scratch (example skills may ship tiny tooling)
+# ─────────────────────────────────────────────────────────────
+node_modules/
+dist/
+.cache/
+*.log
+.tmp/
+scratch/
+
+# NOTE: .kiro/steering/ and .kiro/agents/ ARE committed on purpose —
+# they document how this repo is built and are free of any growth motive.
