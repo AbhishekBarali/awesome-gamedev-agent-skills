@@ -10,7 +10,7 @@ Status legend: ⬜ pending · 🟦 in progress · ✅ done
 | S01 | Landscape & skill-craft teardown | 1 | ✅ | [SESSION-01-landscape.md](SESSION-01-landscape.md) — 40+ sources triaged, 19 deep |
 | S02 | Format & cross-agent compatibility | 1 | ✅ | [SESSION-02-format-compat.md](SESSION-02-format-compat.md) — compat matrix (9 surfaces), portable-core/adapter rule, install snippets, 26-check validator spec |
 | S03 | Domain taxonomy & source map | 1 | ⬜ | — |
-| S04 | Repo scaffolding & infrastructure | 1 | 🟦 | this session |
+| S04 | Repo scaffolding & infrastructure | 1 | ✅ | [SESSION-04](SESSION-04-scaffolding.md) |
 | S05 | Standards lock & router spec (gate) | 2 | ⬜ | — |
 | S06 | Author: Godot skills | 3 | ⬜ | — |
 | S07 | Author: Unity + Unreal skills | 3 | ⬜ | — |
