@@ -25,7 +25,7 @@ Status legend: ⬜ pending · 🟦 in progress · ✅ done
 | S13 | QA, validation & originality audit | 5 | ✅ | [SESSION-13-qa.md](SESSION-13-qa.md) — validator green (63 files); 22 fixes across 14 skills; routing matrix + 8 edge cases pass; Kiro + Claude Code smoke test recorded |
 | S14 | README & docs polish | 6 | ✅ | [SESSION-14-docs.md](SESSION-14-docs.md) — README rewritten around the router; catalog tables regenerated (62 + router, counts verified); INSTALLATION/COMPATIBILITY/CONTRIBUTING finalized; repo description + 11 topics set |
 | S15 | Final consolidation & release | 6 | ✅ | [SESSION-15-final.md](SESSION-15-final.md) — `docs/BUILD-LOG.md` consolidated; final audit green (validator, links, license, separation, router); **v1.0.0** tagged & released |
-| S16 | Community handoff & maintenance | 6 | ⬜ | post-release; ongoing |
+| S16 | Release finalization & community handoff | 6 | ✅ | [SESSION-16-launch.md](SESSION-16-launch.md) — release-readiness re-verified (validator green, 62 + router, routing matrix, smoke test); **v1.0.0** published (annotated tag + value-focused GitHub release); description/topics confirmed; social-preview image prepared; handed off to maintenance |
 
 ## Waves
 
@@ -34,4 +34,4 @@ Status legend: ⬜ pending · 🟦 in progress · ✅ done
 - **Wave 3** (S06–S11): author the skills in parallel. ✅ done — all 62 v1 skills authored and merged to `main`.
 - **Wave 4** (S12): build the master router and integrate. ✅ done — six session branches merged; `router/SKILL.md` + `router/references/` added; validator passes on 63 files (62 skills + router).
 - **Wave 5** (S13): QA, validation, originality audit. ✅ done — validator green; rubric/originality/routing verified; cross-agent smoke test recorded.
-- **Wave 6** (S14–S16): docs polish → release → community handoff. S14 ✅ docs polished and accurate to the shipped tree; S15 ✅ build log consolidated, final audit green, **v1.0.0 released**; S16 (community handoff & maintenance) is the ongoing post-release track.
+- **Wave 6** (S14–S16): docs polish → release → community handoff. S14 ✅ docs polished and accurate to the shipped tree; S15 ✅ build log consolidated, final audit green; S16 ✅ **v1.0.0** published (annotated tag + GitHub release), social-preview prepared, handed off to maintenance.
