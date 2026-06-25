@@ -218,22 +218,32 @@ primitives.
 ## Agent compatibility
 
 Every skill here is a plain `SKILL.md` folder in the [Agent Skills](https://agentskills.io) open
-standard — metadata plus a Markdown playbook the agent reads on demand. The same file loads
-**natively** in Claude Code, Claude, Cursor, Windsurf, Cline, OpenAI Codex, Gemini CLI, GitHub
-Copilot, Kiro, VS Code, and [many more](https://agentskills.io/clients). There are no
-editor-specific rule files to maintain and nothing to convert.
+standard — metadata plus a Markdown playbook the agent reads on demand.
 
-The easiest install is the universal CLI, which detects your agent and writes the skills to its
-skills directory:
+The same file loads **natively** across the ecosystem: Claude Code, Claude, Cursor, Windsurf,
+Cline, OpenAI Codex, Gemini CLI, GitHub Copilot, Kiro, VS Code, and
+[many more](https://agentskills.io/clients). There are no editor-specific rule files to maintain
+and nothing to convert.
+
+**Install with one command.** The universal CLI detects your agent and writes the skills to the
+right place:
 
 ```bash
 npx skills add AbhishekBarali/awesome-gamedev-agent-skills
 ```
 
-Or drop a skill's `<name>/` folder into your agent's skills directory yourself — commonly
-`.claude/skills/`, `.agents/skills/` (the shared path Codex, Gemini, Copilot, and Cursor all read),
-`.cursor/skills/`, `.windsurf/skills/`, `.cline/skills/`, or `.kiro/skills/`. The exact per-agent
-paths, triggers, and the handful of optional fields that vary by agent are in
+**Or copy by hand.** Drop a skill's `<name>/` folder into your agent's skills directory:
+
+| Agent | Skills directory |
+|-------|------------------|
+| Claude Code | `.claude/skills/` |
+| Codex · Gemini CLI · GitHub Copilot | `.agents/skills/` _(shared path)_ |
+| Cursor | `.cursor/skills/` _(also reads `.agents/skills/`)_ |
+| Windsurf | `.windsurf/skills/` |
+| Cline | `.cline/skills/` |
+| Kiro | `.kiro/skills/` |
+
+The exact per-agent paths, triggers, and the handful of optional fields that vary by agent are in
 [`docs/COMPATIBILITY.md`](docs/COMPATIBILITY.md).
 
 ## Demo
