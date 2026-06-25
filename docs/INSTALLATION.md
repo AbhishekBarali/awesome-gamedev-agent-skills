@@ -25,7 +25,36 @@ is the dispatcher). Copy it in alongside the others so the agent can route reque
 > The examples below use one skill (`godot-tilemap`) and POSIX shell. On Windows PowerShell,
 > replace `cp -R src dest` with `Copy-Item -Recurse src dest` and `mkdir -p` with `mkdir`.
 
-## Claude Code
+## Claude Code (plugin — recommended)
+
+This repo is a Claude Code plugin marketplace (see [`.claude-plugin/marketplace.json`](../.claude-plugin/marketplace.json)),
+so you can install it without cloning or copying files. Add the marketplace once:
+
+```bash
+claude plugin marketplace add AbhishekBarali/awesome-gamedev-agent-skills
+```
+
+Easiest — install the router and all 62 skills in one command:
+
+```bash
+claude plugin install gamedev@awesome-gamedev-agent-skills
+```
+
+Or install just what you use (each engine and category is its own plugin):
+
+```bash
+claude plugin install router@awesome-gamedev-agent-skills        # always install this
+claude plugin install godot@awesome-gamedev-agent-skills         # engine: godot | unity | unreal | web-engines | other-engines
+claude plugin install disciplines@awesome-gamedev-agent-skills   # cross-engine concepts
+claude plugin install genres@awesome-gamedev-agent-skills        # genre templates
+claude plugin install workflows@awesome-gamedev-agent-skills     # jam / prototype / shipping
+```
+
+Verify with `/plugin` or `/skills` inside Claude Code.
+
+## Claude Code (manual copy)
+
+Prefer to copy files instead of using the plugin system:
 
 ```bash
 # project-local
@@ -66,6 +95,12 @@ Both read `.agents/skills/`, so one copy serves both:
 ```bash
 mkdir -p .agents/skills        # repo-local; or ~/.agents/skills for user-global
 cp -R skills/godot/godot-tilemap .agents/skills/
+```
+
+Gemini CLI can also install a skill straight from this repo, no clone needed:
+
+```bash
+gemini skills install https://github.com/AbhishekBarali/awesome-gamedev-agent-skills.git --path skills/godot/godot-tilemap
 ```
 
 - **Gemini CLI:** verify with `gemini skills list` or `/skills`; activation prompts for consent.

@@ -10,54 +10,86 @@ right skill for whatever you're building.**
 [![Format](https://img.shields.io/badge/format-Agent%20Skills-informational)](docs/SKILL-FORMAT.md)
 [![Last commit](https://img.shields.io/github/last-commit/AbhishekBarali/awesome-gamedev-agent-skills)](https://github.com/AbhishekBarali/awesome-gamedev-agent-skills/commits/main)
 
-[Agent Skills](docs/SKILL-FORMAT.md) are small, focused capability files an AI coding agent
-loads on demand. This repository is an original, cross-engine collection of **62 game-dev
-skills** plus a **master router** that detects your engine and task and pulls in only the
-skills you need — so you don't have to know which one to ask for.
+[Agent Skills](docs/SKILL-FORMAT.md) are small capability files an AI agent loads only when it
+needs them. This repo gives your agent **62 game-dev skills** and a **router** that picks the
+right ones for you. You describe what you're building; the agent loads the matching engine and
+task skills before it writes code.
 
-Every skill is written from primary documentation, version-pinned to a stated engine release,
-and verified by a mechanical [validator](scripts/validate-skills.py). Nothing here is copied
-from other skill collections.
+- **Cross-engine.** Godot, Unity, Unreal, Phaser, PixiJS, three.js, Bevy, pygame, LÖVE, Roblox.
+- **You don't pick skills.** The router detects your engine and task and loads only what fits.
+- **Built to trust.** Every skill is written from primary docs, version-pinned to a stated
+  engine release, and checked by a [validator](scripts/validate-skills.py). Nothing is copied
+  from other skill collections.
+
+## Contents
+
+- [Quick start](#quick-start)
+- [What you can ask](#what-you-can-ask)
+- [How the router picks skills](#how-the-router-picks-skills)
+- [Catalog](#catalog)
+- [Agent compatibility](#agent-compatibility)
+- [Contributing](#contributing)
 
 ## Quick start
 
-1. **Install once.** Copy the collection (the router + every skill) into your agent's skills
-   directory. Per-agent commands are in [`docs/INSTALLATION.md`](docs/INSTALLATION.md); the
-   short version for Claude Code:
+**Claude Code** — add the marketplace once, then install everything with a single command:
 
-   ```bash
-   mkdir -p .claude/skills
-   find skills -name SKILL.md -type f -exec dirname {} \; | while read -r d; do
-     cp -R "$d" .claude/skills/
-   done
-   cp -R router .claude/skills/router
-   ```
+```bash
+claude plugin marketplace add AbhishekBarali/awesome-gamedev-agent-skills
+claude plugin install gamedev@awesome-gamedev-agent-skills
+```
 
-2. **Describe what you want.** Ask your agent a game-dev question in plain language:
+That's it — the router and all 62 skills are now available. Build in only one engine? Install a
+smaller bundle instead — `router` plus your engine:
 
-   > "add a double jump to my Godot player"
+```bash
+claude plugin install router@awesome-gamedev-agent-skills
+claude plugin install godot@awesome-gamedev-agent-skills    # or: unity · unreal · web-engines · other-engines
+```
 
-3. **Let it route.** The router detects the engine (here, Godot from `project.godot`), picks
-   the task skills (`godot-2d-movement` + `platformer`), and reads only those before writing
-   code. You never name a skill yourself.
+**Any other agent** (Kiro, Gemini CLI, Codex, Cursor, Windsurf, Cline) or prefer to copy the
+files by hand? One-line and per-agent instructions are in
+**[`docs/INSTALLATION.md`](docs/INSTALLATION.md)**.
 
-## How the router works
+Then just talk to your agent — see below.
 
-The [`router`](router/SKILL.md) is the entry point for any game-dev request. It runs three
-steps, then composes the result:
+## What you can ask
 
-1. **Detect the engine.** It fingerprints the project — `project.godot` → Godot, `*.uproject`
-   → Unreal, `Assets/` + `ProjectSettings/` → Unity, a `bevy`/`phaser`/`pixi.js`/`three`
-   dependency → that framework, and so on — and picks **exactly one** engine skill set. No
-   project files? It reads the engine from your wording, or asks once.
-2. **Understand the task.** It classifies your phrasing into cross-engine **disciplines**
-   (AI, save systems, shaders, …), at most one **genre** (platformer, roguelike, RPG, …), and
-   any **workflow** (game jam, ship to Steam/itch).
-3. **Load the skill(s).** It reads only the chosen `SKILL.md` bodies — engine fundamentals
-   first, then the discipline concept, then genre glue — and opens a skill's `references/`
-   only when the subtask needs that depth. It re-routes when the task pivots to a new concern.
+Describe the task in plain language. The router figures out the skills:
 
-Engine selection is exclusive; disciplines, genres, and workflows are additive.
+| You say | Skills it loads for you |
+|---------|-------------------------|
+| "add a double jump to my Godot player" | `godot-2d-movement` + `platformer` |
+| "make an inventory for my Unity RPG" | `unity-scriptableobjects` + `rpg` + `save-systems` |
+| "procedural dungeon roguelike in Godot" | `godot-tilemap` + `procedural-gen` + `roguelike` |
+| "how should I design save slots?" | `save-systems` |
+| "publish my game on itch with butler" | `itch-publish` |
+
+You never type the skill names on the right. That's the router's job.
+
+## How the router picks skills
+
+You never name a skill. On each request the router does three things:
+
+1. **Detects your engine** from project files — a `project.godot` means Godot, a `*.uproject`
+   means Unreal, and so on. If it can't tell, it just asks.
+2. **Reads your request** for the task — a concept (AI, shaders, saving), a genre (platformer,
+   roguelike), or a shipping step (game jam, Steam).
+3. **Loads only the matching skills**, in order: engine basics first, then the concept, then any
+   genre glue. It re-routes if you switch to something new.
+
+That's why "add a double jump to my Godot player" loads `godot-2d-movement` + `platformer` and
+nothing else.
+
+<details>
+<summary>The exact detection signals and routing table</summary>
+
+The full algorithm — every engine fingerprint, the task-to-skill table, and how engine,
+discipline, genre, and workflow skills compose — lives in the router skill itself:
+[`router/SKILL.md`](router/SKILL.md). In short: engine selection is exclusive (exactly one
+engine), while disciplines, genres, and workflows are additive on top.
+
+</details>
 
 ## Catalog
 
@@ -174,25 +206,20 @@ primitives.
 
 ## Agent compatibility
 
-The portable core of every skill is the `SKILL.md` open standard. Native agents drop the
-folder in as-is; three rules-based editors are reached through generated adapters. Full
-details — paths, triggers, adapter mapping — are in
-[`docs/COMPATIBILITY.md`](docs/COMPATIBILITY.md).
+Every skill is a plain `SKILL.md` folder in the open [Agent Skills](https://agentskills.io)
+format — the same format Claude Code, Gemini CLI, and Codex CLI load natively. For those agents,
+installing a skill is just putting its folder in the skills directory:
 
-| Agent | Native skills? | Install path | Adapter needed? |
-|-------|:--------------:|--------------|:---------------:|
-| Claude Code | ✅ | `.claude/skills/<name>/` | ❌ |
-| Claude Agent SDK | ✅ | `.claude/skills/<name>/` | ❌ |
-| Claude.ai | ✅ (zip upload) | per-account upload | ❌ |
-| Kiro | ✅ | `.kiro/skills/<name>/` | ❌ |
-| Gemini CLI | ✅ | `.agents/skills/<name>/` | ❌ |
-| Codex CLI | ✅ | `.agents/skills/<name>/` | ❌ |
-| Cursor | ❌ | `.cursor/rules/<name>.mdc` | ✅ generate |
-| Windsurf | ❌ | `.windsurf/rules/<name>.md` | ✅ generate |
-| Cline | ❌ | `.clinerules/<name>.md` | ✅ generate |
+| Agent | Put skills in |
+|-------|---------------|
+| Claude Code · Claude Agent SDK | `.claude/skills/<name>/` |
+| Claude.ai | upload the skill folder (zipped) |
+| Kiro | `.kiro/skills/<name>/` |
+| Gemini CLI · Codex CLI | `.agents/skills/<name>/` (the shared path both read) |
 
-The one directory Gemini CLI and Codex CLI both read is `.agents/skills/<name>/SKILL.md` —
-use it as the universal CLI location.
+Editor tools (Cursor, Windsurf, Cline) load **rules files** instead of `SKILL.md`, so a skill is
+converted to their rule format — `scripts/adapters/generate-rules` does that. Exact paths,
+triggers, and the full mapping live in [`docs/COMPATIBILITY.md`](docs/COMPATIBILITY.md).
 
 ## Demo
 
