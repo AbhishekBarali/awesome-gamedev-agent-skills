@@ -1,0 +1,135 @@
+{
+  "name": "awesome-gamedev-agent-skills",
+  "owner": { "name": "AbhishekBarali" },
+  "metadata": {
+    "description": "Cross-engine game-development Agent Skills, grouped by engine, discipline, genre, and workflow."
+  },
+  "plugins": [
+    {
+      "name": "router",
+      "source": "./",
+      "description": "Master router that detects the engine + task and loads the right skill(s).",
+      "skills": [
+        "./router"
+      ]
+    },
+    {
+      "name": "godot",
+      "source": "./",
+      "description": "Godot 4.x engine skills (GDScript, nodes, physics, shaders, export, C#).",
+      "skills": [
+        "./skills/godot/godot-gdscript",
+        "./skills/godot/godot-nodes-scenes",
+        "./skills/godot/godot-signals-groups",
+        "./skills/godot/godot-2d-movement",
+        "./skills/godot/godot-tilemap",
+        "./skills/godot/godot-physics",
+        "./skills/godot/godot-ui-control",
+        "./skills/godot/godot-animation",
+        "./skills/godot/godot-shaders",
+        "./skills/godot/godot-3d-essentials",
+        "./skills/godot/godot-resources",
+        "./skills/godot/godot-audio",
+        "./skills/godot/godot-multiplayer",
+        "./skills/godot/godot-export",
+        "./skills/godot/godot-csharp"
+      ]
+    },
+    {
+      "name": "unity",
+      "source": "./",
+      "description": "Unity 6 (6000.0 LTS) engine skills (C#, input, physics, animation, build).",
+      "skills": [
+        "./skills/unity/unity-csharp-scripting",
+        "./skills/unity/unity-input-system",
+        "./skills/unity/unity-physics",
+        "./skills/unity/unity-animation",
+        "./skills/unity/unity-scriptableobjects",
+        "./skills/unity/unity-tilemap-2d",
+        "./skills/unity/unity-navmesh",
+        "./skills/unity/unity-build-pipeline"
+      ]
+    },
+    {
+      "name": "unreal",
+      "source": "./",
+      "description": "Unreal Engine 5.4+ skills (Blueprints, C++ gameplay, input, AI, Niagara, packaging).",
+      "skills": [
+        "./skills/unreal/unreal-blueprints",
+        "./skills/unreal/unreal-cpp-gameplay",
+        "./skills/unreal/unreal-enhanced-input",
+        "./skills/unreal/unreal-behavior-trees",
+        "./skills/unreal/unreal-niagara",
+        "./skills/unreal/unreal-packaging"
+      ]
+    },
+    {
+      "name": "web-engines",
+      "source": "./",
+      "description": "Web game frameworks: Phaser 3, PixiJS v8, three.js.",
+      "skills": [
+        "./skills/web-engines/phaser-core",
+        "./skills/web-engines/phaser-arcade-physics",
+        "./skills/web-engines/pixijs-rendering",
+        "./skills/web-engines/threejs-scene-setup",
+        "./skills/web-engines/threejs-gltf-loading",
+        "./skills/web-engines/threejs-materials-lighting"
+      ]
+    },
+    {
+      "name": "other-engines",
+      "source": "./",
+      "description": "Bevy, pygame, LÖVE, and Roblox engine skills.",
+      "skills": [
+        "./skills/other-engines/bevy-ecs",
+        "./skills/other-engines/pygame-core",
+        "./skills/other-engines/love2d-core",
+        "./skills/other-engines/roblox-luau",
+        "./skills/other-engines/roblox-datastores"
+      ]
+    },
+    {
+      "name": "disciplines",
+      "source": "./",
+      "description": "Cross-engine concepts: AI, procedural gen, dialogue, saves, audio, shaders, physics, level design, input.",
+      "skills": [
+        "./skills/disciplines/game-ai",
+        "./skills/disciplines/procedural-gen",
+        "./skills/disciplines/dialogue-systems",
+        "./skills/disciplines/save-systems",
+        "./skills/disciplines/audio-design",
+        "./skills/disciplines/shader-programming",
+        "./skills/disciplines/physics-tuning",
+        "./skills/disciplines/level-design",
+        "./skills/disciplines/input-systems"
+      ]
+    },
+    {
+      "name": "genres",
+      "source": "./",
+      "description": "Compositional genre templates: platformer, roguelike, RPG, FPS, tower defense, card, visual novel, survival, puzzle.",
+      "skills": [
+        "./skills/genres/platformer",
+        "./skills/genres/roguelike",
+        "./skills/genres/rpg",
+        "./skills/genres/fps-shooter",
+        "./skills/genres/tower-defense",
+        "./skills/genres/card-game",
+        "./skills/genres/visual-novel",
+        "./skills/genres/survival-crafting",
+        "./skills/genres/puzzle"
+      ]
+    },
+    {
+      "name": "workflows",
+      "source": "./",
+      "description": "Process and shipping skills: game jam, fast prototyping, Steam, itch.io.",
+      "skills": [
+        "./skills/workflows/game-jam",
+        "./skills/workflows/prototype-fast",
+        "./skills/workflows/steam-publish",
+        "./skills/workflows/itch-publish"
+      ]
+    }
+  ]
+}
