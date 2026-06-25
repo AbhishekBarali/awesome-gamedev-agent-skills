@@ -137,7 +137,7 @@ snapshots to save memory; snapshots are simplest and fine for small boards.
 - **Board rendering:** `godot-tilemap` / `unity-tilemap-2d` for the grid; `godot-ui-control` for HUD, score, and menus.
 - **Levels:** `level-design` for hand-authored puzzles and difficulty pacing; `procedural-gen` for solvable generated boards.
 - **Persistence:** `save-systems` for level progress, high scores, and seeded daily puzzles.
-- **Juice:** the engine animation/`Tween` skill for swaps/falls/clears; `audio-design` for match and chain cues.
+- **Juice:** `game-feel` for match/cascade pop, screen shake, and chain feedback; the engine animation/`Tween` skill for swaps/falls/clears; `audio-design` for match and chain cues.
 - **Scripting:** `godot-gdscript` / `unity-csharp-scripting` for the resolution loop and rules.
 
 ## References

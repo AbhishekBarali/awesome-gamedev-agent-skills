@@ -126,7 +126,7 @@ def on_event(kind, data):
 - **Persistence:** `save-systems` — character, inventory, quest flags, world state, versioning.
 - **Content data:** `godot-resources` / `unity-scriptableobjects` — items, enemies, quests, skills as assets.
 - **Combat AI:** `game-ai` for enemy behavior; for turn order reuse the scheduler idea in `roguelike`.
-- **UI:** `godot-ui-control` for inventory, quest log, character sheet, dialogue box.
+- **UI:** `game-ui-ux` for HUD/menu layout, resolution scaling, and controller/keyboard nav; `godot-ui-control` for the concrete inventory, quest log, character sheet, and dialogue box.
 - **World:** `level-design` plus your engine's tilemap/3D skill (`godot-tilemap`, `godot-3d-essentials`).
 
 ## References

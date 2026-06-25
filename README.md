@@ -6,12 +6,12 @@
 right skill for whatever you're building.**
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-62%20%2B%20router-brightgreen)](skills/)
+[![Skills](https://img.shields.io/badge/skills-66%20%2B%20router-brightgreen)](skills/)
 [![Format](https://img.shields.io/badge/format-Agent%20Skills-informational)](docs/SKILL-FORMAT.md)
 [![Last commit](https://img.shields.io/github/last-commit/AbhishekBarali/awesome-gamedev-agent-skills)](https://github.com/AbhishekBarali/awesome-gamedev-agent-skills/commits/main)
 
 [Agent Skills](docs/SKILL-FORMAT.md) are small capability files an AI agent loads only when it
-needs them. This repo gives your agent **62 game-dev skills** and a **router** that picks the
+needs them. This repo gives your agent **66 game-dev skills** and a **router** that picks the
 right ones for you. You describe what you're building; the agent loads the matching engine and
 task skills before it writes code.
 
@@ -33,7 +33,7 @@ task skills before it writes code.
 ## Quick start
 
 **One command, any agent.** The [`skills`](https://www.npmjs.com/package/skills) CLI detects the
-coding agent you already use and installs the router plus all 62 skills into the right place:
+coding agent you already use and installs the router plus all 66 skills into the right place:
 
 ```bash
 npx skills add AbhishekBarali/awesome-gamedev-agent-skills
@@ -104,7 +104,7 @@ engine), while disciplines, genres, and workflows are additive on top.
 
 ## Catalog
 
-62 skills across 8 categories — each links to its `SKILL.md` below.
+66 skills across 8 categories — each links to its `SKILL.md` below.
 
 ### Engines
 
@@ -173,7 +173,7 @@ engine), while disciplines, genres, and workflows are additive on top.
 | [`roblox-luau`](skills/other-engines/roblox-luau/SKILL.md) | Roblox Luau scripting: services, instances, client/server model |
 | [`roblox-datastores`](skills/other-engines/roblox-datastores/SKILL.md) | Persistent data with `DataStoreService`: sessions, limits, ordered stores |
 
-### Disciplines — 9 ([`skills/disciplines/`](skills/disciplines/))
+### Disciplines — 13 ([`skills/disciplines/`](skills/disciplines/))
 
 Cross-engine concepts that load alongside the detected engine skill.
 
@@ -188,6 +188,10 @@ Cross-engine concepts that load alongside the detected engine skill.
 | [`physics-tuning`](skills/disciplines/physics-tuning/SKILL.md) | Tuning feel: fixed timestep, mass/drag, CCD, stability, layers |
 | [`level-design`](skills/disciplines/level-design/SKILL.md) | Whitebox/blockout structure, tile/grid layout, pacing |
 | [`input-systems`](skills/disciplines/input-systems/SKILL.md) | Input architecture: action mapping, rebinding, multi-device, buffering |
+| [`game-feel`](skills/disciplines/game-feel/SKILL.md) | Juice: screen shake, hit-stop, tweening/easing, squash & stretch, feedback tiers |
+| [`game-ui-ux`](skills/disciplines/game-ui-ux/SKILL.md) | Cross-engine HUD/menus: anchors, resolution scaling, safe areas, focus navigation |
+| [`camera-systems`](skills/disciplines/camera-systems/SKILL.md) | 2D follow/deadzone/look-ahead + bounds, 3D orbit/first-person, screen-shake hook |
+| [`performance-optimization`](skills/disciplines/performance-optimization/SKILL.md) | Profile-first: frame budget, CPU/GPU triage, draw calls, pooling, GC, asset budgets |
 
 ### Genres — 9 ([`skills/genres/`](skills/genres/))
 
@@ -260,7 +264,7 @@ why._
 ## Repository layout
 
 ```
-skills/        62 specialized skills, grouped by engine / discipline / genre / workflow
+skills/        66 specialized skills, grouped by engine / discipline / genre / workflow
 router/        the master router skill (+ references/)
 docs/          authoring standard, installation, compatibility
 templates/     SKILL.md template

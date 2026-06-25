@@ -125,6 +125,7 @@ func _ready() -> void:
 
 ## Related skills
 
+- `game-ui-ux` — cross-engine UI/UX: responsive scaling, safe areas, focus navigation, screen flow.
 - `godot-animation` — Tween-based UI transitions and juicing.
 - `godot-signals-groups` — connecting UI events to game logic.
 - `input-systems` — rebindable input and multi-device focus.

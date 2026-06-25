@@ -131,6 +131,7 @@ roll a naive raycast-per-cell — it produces asymmetric, "blinking" vision. See
 - **Persistence:** `save-systems` for run-resume, profile/meta-progression, and true permadeath wipes.
 - **Scripting/data:** `godot-resources` / `unity-scriptableobjects` to define items, monsters, and drop tables as data.
 - **UI:** `godot-ui-control` for the message log, inventory, and HUD.
+- **Feel:** `game-feel` for hit/death juice — screen shake and hit-stop that sell impacts on a turn-based grid.
 
 ## References
 

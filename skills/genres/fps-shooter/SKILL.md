@@ -113,6 +113,7 @@ ttk_seconds   = (shots_to_kill - 1) / fire_rate_per_second   # first shot at t=0
 - **Input:** `input-systems` (or `unreal-enhanced-input`) for look/move, rebinding, and gamepad aim assist.
 - **Shooting physics:** `godot-physics` / `unity-physics` for raycasts and projectile collision.
 - **Enemies:** `game-ai` with `unity-navmesh` / `unreal-behavior-trees` / Godot navigation.
+- **Camera & feel:** `camera-systems` for FOV/recoil kick and look smoothing; `game-feel` for hit-stop, screen shake, and impact juice.
 - **Polish:** `audio-design` for weapon/impact sound; `shader-programming` for muzzle/impact VFX.
 - **Process:** `prototype-fast` to validate aim feel before building content.
 

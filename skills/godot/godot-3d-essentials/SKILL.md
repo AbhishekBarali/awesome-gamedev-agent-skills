@@ -138,4 +138,6 @@ func build_floor(width: int, depth: int, item_id: int) -> void:
 - `godot-physics` — 3D bodies, areas, and raycasts.
 - `godot-shaders` — spatial shaders for custom 3D surfaces.
 - `godot-animation` — `AnimationTree` for 3D characters.
+- `camera-systems` — third-person orbit / first-person look rigs, framing, and collision.
+- `performance-optimization` — keep 3D scenes within frame budget (draw calls, lights, LOD).
 - `fps-shooter` — composes 3D movement, input, and AI into a game.

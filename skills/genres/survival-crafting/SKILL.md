@@ -139,7 +139,7 @@ def harvest(node, tool):
 - **Persistence:** `save-systems` for large-world state, base, inventory, needs, and versioning.
 - **Threats:** `game-ai` for creatures; the engine physics skill for melee/collision.
 - **Building/placement:** `godot-tilemap` / `unity-tilemap-2d` (2D) or `godot-3d-essentials` (3D) plus UI snapping.
-- **UI:** `godot-ui-control` for inventory, crafting menu, needs HUD, build mode.
+- **UI:** `game-ui-ux` for inventory/crafting/HUD layout and scaling; `godot-ui-control` for the concrete inventory, crafting menu, needs HUD, and build mode.
 
 ## References
 

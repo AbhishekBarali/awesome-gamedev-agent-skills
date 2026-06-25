@@ -126,7 +126,7 @@ if flags.get("helped_npc"): play_route("good_ending") else: play_route("neutral_
 ## Composition (build it from these skills)
 
 - **Script engine:** `dialogue-systems` (Ink / Yarn Spinner) — branching, conditions, variables, localization hooks.
-- **Presentation:** `godot-ui-control` for the text box, choice menu, name plate, and backlog UI.
+- **Presentation:** `game-ui-ux` for text-box/choice-menu layout, scaling, and safe areas; `godot-ui-control` for the concrete text box, choice menu, name plate, and backlog UI.
 - **Persistence:** `save-systems` for save-anywhere slots, seen-text/skip data, and settings.
 - **Audio:** `audio-design` for per-scene music, SFX, and voice playback.
 - **Visuals:** the engine animation/`Tween` skill for sprite/background transitions; `shader-programming` for dissolves.

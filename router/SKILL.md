@@ -4,12 +4,13 @@ description: >
   Routes any game-development request to the right specialized skill(s): it detects the engine
   (Godot, Unity, Unreal, Bevy, Phaser, PixiJS, three.js, LÖVE, pygame, Roblox) and the task, then
   reads the chosen skill before acting. Use to make a game or to decide which skill applies — for
-  players, levels, enemies, shaders, UI, physics, input, audio, saving, multiplayer, AI, dialogue,
-  or procedural generation, for genres (platformer, roguelike, RPG, FPS, tower-defense, card game,
-  visual novel, survival-crafting, puzzle), and for shipping (game jam, Steam, itch). Start here
+  players, levels, enemies, shaders, UI/UX, cameras, game feel, physics, input, audio, saving,
+  multiplayer, AI, dialogue, procedural generation, or performance, for genres (platformer,
+  roguelike, RPG, FPS, tower-defense, card game, visual novel, survival-crafting, puzzle), and for
+  shipping (game jam, Steam, itch). Start here
   when unsure which gamedev skill to use.
 license: Apache-2.0
-compatibility: Engine-agnostic dispatcher over the skills/ collection (62 skills, 8 categories)
+compatibility: Engine-agnostic dispatcher over the skills/ collection (66 skills, 8 categories)
 metadata:
   engine: none
   category: router
@@ -71,7 +72,9 @@ After the engine, read the request for task signals (three **additive** categori
 
 - **disciplines** (cross-engine concepts): `game-ai`, `procedural-gen`, `dialogue-systems`,
   `save-systems`, `audio-design`, `shader-programming`, `physics-tuning`, `level-design`,
-  `input-systems`. Triggered by concept words ("pathfinding", "save slots", "fragment shader").
+  `input-systems`, `game-feel`, `camera-systems`, `game-ui-ux`, `performance-optimization`.
+  Triggered by concept words ("pathfinding", "save slots", "fragment shader", "screen shake",
+  "camera follow", "HUD/menu", "optimize/low FPS").
 - **genres** (whole-game templates): `platformer`, `roguelike`, `rpg`, `fps-shooter`,
   `tower-defense`, `card-game`, `visual-novel`, `survival-crafting`, `puzzle`. Triggered by genre
   words ("make a roguelike", "deckbuilder").
@@ -114,20 +117,24 @@ File signals sharpen this: `*.yarn`/`*.ink` → `dialogue-systems`/`visual-novel
 | jitter, tunneling, fixed timestep | `physics-tuning` | `godot-physics` / `unity-physics` |
 | whitebox, blockout, tile layout, pacing | `level-design` | `godot-tilemap` / `unity-tilemap-2d` |
 | rebind, gamepad, input buffering | `input-systems` | `unity-input-system` / `unreal-enhanced-input` / Godot InputMap |
+| screen shake, hit-stop, juice, squash & stretch, "make it punchy" | `game-feel` | engine animation/tween + `camera-systems` (shake) |
+| camera follow, deadzone, look-ahead, orbit, first-person | `camera-systems` | `godot-2d-movement` / `godot-3d-essentials` / Cinemachine |
+| HUD, menu, UI layout, scaling, safe area, focus nav | `game-ui-ux` | `godot-ui-control` / Unity UI (UGUI/UI Toolkit) |
+| low FPS, optimize, draw calls, GC spike, pooling, profiler | `performance-optimization` | engine profiler + `physics-tuning` |
 
 ### 3c. Genres — **compose** engine + disciplines (bind `*` to the detected engine)
 
 | Genre (`says:`) | composes |
 |-----------------|----------|
-| platformer, jump, double jump | `godot-2d-movement` (or engine physics) + `godot-tilemap`/`unity-tilemap-2d` + `level-design` |
-| roguelike, procedural dungeon, permadeath | `procedural-gen` + `godot-tilemap`/`unity-tilemap-2d` + `game-ai` + `save-systems` |
-| RPG, stats, inventory, quests | `godot-resources`/`unity-scriptableobjects` + `dialogue-systems` + `save-systems` |
-| FPS, first-person, hitscan | `godot-3d-essentials`/`unreal-cpp-gameplay` + `input-systems` + `game-ai` |
-| tower defense, waves, lanes | `game-ai` + engine movement + `level-design` |
-| card game, deckbuilder, TCG | `godot-resources`/`unity-scriptableobjects` + `godot-ui-control` |
-| visual novel, branching story | `dialogue-systems` + `save-systems` + `godot-ui-control` |
-| survival, crafting, gathering | `save-systems` + `godot-resources`/`unity-scriptableobjects` + `procedural-gen` |
-| puzzle, match-3, grid logic | `godot-tilemap`/`unity-tilemap-2d` + `level-design` |
+| platformer, jump, double jump | `godot-2d-movement` (or engine physics) + `godot-tilemap`/`unity-tilemap-2d` + `level-design` + `camera-systems` + `game-feel` |
+| roguelike, procedural dungeon, permadeath | `procedural-gen` + `godot-tilemap`/`unity-tilemap-2d` + `game-ai` + `save-systems` + `game-feel` |
+| RPG, stats, inventory, quests | `godot-resources`/`unity-scriptableobjects` + `dialogue-systems` + `save-systems` + `game-ui-ux` |
+| FPS, first-person, hitscan | `godot-3d-essentials`/`unreal-cpp-gameplay` + `input-systems` + `game-ai` + `camera-systems` + `game-feel` |
+| tower defense, waves, lanes | `game-ai` + engine movement + `level-design` + `game-ui-ux` |
+| card game, deckbuilder, TCG | `godot-resources`/`unity-scriptableobjects` + `game-ui-ux` (+ engine UI) |
+| visual novel, branching story | `dialogue-systems` + `save-systems` + `game-ui-ux` |
+| survival, crafting, gathering | `save-systems` + `godot-resources`/`unity-scriptableobjects` + `procedural-gen` + `game-ui-ux` |
+| puzzle, match-3, grid logic | `godot-tilemap`/`unity-tilemap-2d` + `level-design` + `game-feel` |
 
 ### 3d. Workflows — engine-independent process & shipping
 
@@ -195,6 +202,9 @@ and offer to load it if the user confirms.
 | "how do I design save slots with migration?" | (none) | `save-systems` only |
 | "publish my game on itch with butler" | (any/none) | `itch-publish` only |
 | "I want to make a game but don't know what to use" | unknown → ask, default Godot | router asks once; then e.g. `godot-nodes-scenes` |
+| "make hits feel punchy in my Godot game" | Godot (`project.godot`) | `game-feel` (+ `camera-systems` for shake) |
+| "the camera should follow my player smoothly" | (detected engine) | `camera-systems` (+ engine movement skill) |
+| "my Unity game drops to 30 FPS, optimize it" | Unity (`Assets/`+`ProjectSettings/`) | `performance-optimization` (profile first) → engine skill |
 
 ## References
 

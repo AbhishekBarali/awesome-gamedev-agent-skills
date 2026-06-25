@@ -125,7 +125,7 @@ def take_turn(player):
 ## Composition (build it from these skills)
 
 - **Card content:** `godot-resources` / `unity-scriptableobjects` — define each card as a data asset.
-- **UI:** `godot-ui-control` for hand layout, drag/drop, zone counts, and targeting prompts.
+- **UI:** `game-ui-ux` for layout, scaling, and focus navigation; `godot-ui-control` for hand layout, drag/drop, zone counts, and targeting prompts.
 - **Persistence/replays:** `save-systems` for collection, run state (roguelike deckbuilder), and seeded replays.
 - **Opponent AI:** `game-ai` for an AI that evaluates playable cards and picks targets.
 - **Animation/feedback:** the engine animation skill for card movement; `audio-design` for cues.

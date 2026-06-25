@@ -152,4 +152,5 @@ func _physics_process(delta: float) -> void:
 - `godot-physics` — collision layers/masks, areas, raycasts, rigid bodies.
 - `godot-tilemap` — building the levels this character walks on.
 - `godot-animation` — driving sprite/skeletal animation from movement state.
+- `camera-systems` — follow camera, deadzone, and look-ahead that track this character.
 - `platformer` / `input-systems` — full genre template and rebindable input.

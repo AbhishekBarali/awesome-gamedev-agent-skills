@@ -116,7 +116,7 @@ damage_dealt  = tower_dps * time_in_range
 - **Enemy movement:** `godot-2d-movement` (or engine equivalent) to move along the path; `unity-navmesh` for nav-based pathing.
 - **Map:** `godot-tilemap` / `unity-tilemap-2d` for the grid/lanes; `level-design` for map layouts.
 - **Data:** `godot-resources` / `unity-scriptableobjects` to define towers, enemies, and waves as assets.
-- **UI:** `godot-ui-control` for HUD (lives, gold, wave preview, build menu).
+- **UI:** `game-ui-ux` for HUD layout, scaling, and the build menu; `godot-ui-control` for the concrete widgets (lives, gold, wave preview).
 - **Polish:** `audio-design` for fire/hit/leak sound cues.
 
 ## References
