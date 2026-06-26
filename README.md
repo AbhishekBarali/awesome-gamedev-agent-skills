@@ -246,7 +246,7 @@ npx skills add AbhishekBarali/awesome-gamedev-agent-skills
 | Agent | Skills directory |
 |-------|------------------|
 | Claude Code | `.claude/skills/` |
-| Codex · Gemini CLI · GitHub Copilot | `.agents/skills/` _(shared path)_ |
+| Codex · Gemini CLI · GitHub Copilot · Antigravity | `.agents/skills/` _(shared path)_ |
 | Cursor | `.cursor/skills/` _(also reads `.agents/skills/`)_ |
 | Windsurf | `.windsurf/skills/` |
 | Cline | `.cline/skills/` |

@@ -58,6 +58,7 @@ own skills documentation.
 | **OpenAI Codex** | `.agents/skills/` | `$skill` · `/skills` · implicit | [docs](https://developers.openai.com/codex/skills) |
 | **Gemini CLI** | `.agents/skills/` or `.gemini/skills/` | activation + consent · `/skills` | [docs](https://geminicli.com/docs/cli/skills/) |
 | **GitHub Copilot** | `.agents/skills/` | auto by description | [docs](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills) |
+| **Antigravity** (Google) | `.agents/skills/` (default; also global `~/.gemini/config/skills/`) | auto by description | [docs](https://antigravity.google/docs/skills) |
 | **Kiro** | `.kiro/skills/` (+ `~/.kiro/skills/`) | auto by description · `/skill-name` | [docs](https://kiro.dev/docs/cli/skills/) |
 | **Others** (VS Code, Roo Code, Junie, Trae, Factory, Tabnine, OpenCode, Goose, …) | see each tool | varies | [client list](https://agentskills.io/clients) |
 
@@ -118,9 +119,9 @@ adoption above is what turns "write it once" into "runs everywhere."
 
 ---
 
-*Sources (checked 2026-06-25): the Agent Skills [specification](https://agentskills.io/specification)
+*Sources (checked 2026-06-26): the Agent Skills [specification](https://agentskills.io/specification)
 and [client list](https://agentskills.io/clients); the [`skills` CLI](https://www.npmjs.com/package/skills);
 and the official skills docs for [Cursor](https://cursor.com/docs/skills),
 [Cline](https://docs.cline.bot/customization/skills), [Codex](https://developers.openai.com/codex/skills),
-and [Kiro](https://kiro.dev/docs/cli/skills/). Content was rephrased for compliance with licensing
-restrictions.*
+[Kiro](https://kiro.dev/docs/cli/skills/), and [Antigravity](https://antigravity.google/docs/skills).
+Content was rephrased for compliance with licensing restrictions.*
