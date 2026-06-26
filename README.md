@@ -230,7 +230,7 @@ Every skill here is a plain `SKILL.md` folder in the [Agent Skills](https://agen
 standard — metadata plus a Markdown playbook the agent reads on demand.
 
 The same file loads **natively** across the ecosystem: Claude Code, Claude, Cursor, Windsurf,
-Cline, OpenAI Codex, Gemini CLI, GitHub Copilot, Kiro, VS Code, and
+Cline, OpenAI Codex, Gemini CLI, GitHub Copilot, Kiro, Antigravity, VS Code, and
 [many more](https://agentskills.io/clients). There are no editor-specific rule files to maintain
 and nothing to convert.
 

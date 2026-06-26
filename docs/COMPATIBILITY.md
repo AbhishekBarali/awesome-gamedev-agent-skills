@@ -14,7 +14,7 @@ For step-by-step install commands, see [`INSTALLATION.md`](INSTALLATION.md).
 - **A skill is just a folder with a `SKILL.md`.** Agents preload only `name` + `description`, then
   read the body when a request matches, then read bundled files on demand (progressive disclosure).
 - **It's broadly supported.** Claude Code, Claude, Cursor, Windsurf, Cline, OpenAI Codex, Gemini
-  CLI, GitHub Copilot, Kiro, VS Code, Roo Code, Junie, Trae, Factory, Tabnine, OpenCode, Goose and
+  CLI, GitHub Copilot, Kiro, Antigravity, VS Code, Roo Code, Junie, Trae, Factory, Tabnine, OpenCode, Goose and
   [many others](https://agentskills.io/clients) load the standard directly.
 - **One installer covers all of them.** `npx skills add AbhishekBarali/awesome-gamedev-agent-skills`
   detects the agents you have installed and copies the skills (router included) to the right place.
