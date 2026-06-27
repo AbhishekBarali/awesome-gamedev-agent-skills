@@ -13,7 +13,7 @@ right skill for whatever you're building.**
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![Skills](https://img.shields.io/badge/skills-66%20%2B%20router-brightgreen)](skills/)
 [![Format](https://img.shields.io/badge/format-Agent%20Skills-informational)](docs/SKILL-FORMAT.md)
-[![Last commit](https://img.shields.io/github/last-commit/AbhishekBarali/awesome-gamedev-agent-skills)](https://github.com/AbhishekBarali/awesome-gamedev-agent-skills/commits/main)
+[![Last commit](https://img.shields.io/github/last-commit/gamedev-skills/awesome-gamedev-agent-skills)](https://github.com/gamedev-skills/awesome-gamedev-agent-skills/commits/main)
 
 [Agent Skills](docs/SKILL-FORMAT.md) are small capability files an AI agent loads only when it
 needs them. This repo gives your agent **66 game-dev skills** and a **router** that picks the
@@ -41,7 +41,7 @@ task skills before it writes code.
 coding agent you already use and installs the router plus all 66 skills into the right place:
 
 ```bash
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills
+npx skills add gamedev-skills/awesome-gamedev-agent-skills
 ```
 
 Add `--list` to preview first, `-g` to install for every project, or `-a <agent>` to target a
@@ -53,7 +53,7 @@ natively in Claude Code, Cursor, Windsurf, Cline, Codex, Gemini CLI, GitHub Copi
 can install it with Claude's own commands:
 
 ```bash
-claude plugin marketplace add AbhishekBarali/awesome-gamedev-agent-skills
+claude plugin marketplace add gamedev-skills/awesome-gamedev-agent-skills
 claude plugin install gamedev@awesome-gamedev-agent-skills
 ```
 
@@ -238,7 +238,7 @@ and nothing to convert.
 right place:
 
 ```bash
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills
+npx skills add gamedev-skills/awesome-gamedev-agent-skills
 ```
 
 **Or copy by hand.** Drop a skill's `<name>/` folder into your agent's skills directory:

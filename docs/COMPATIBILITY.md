@@ -16,7 +16,7 @@ For step-by-step install commands, see [`INSTALLATION.md`](INSTALLATION.md).
 - **It's broadly supported.** Claude Code, Claude, Cursor, Windsurf, Cline, OpenAI Codex, Gemini
   CLI, GitHub Copilot, Kiro, Antigravity, VS Code, Roo Code, Junie, Trae, Factory, Tabnine, OpenCode, Goose and
   [many others](https://agentskills.io/clients) load the standard directly.
-- **One installer covers all of them.** `npx skills add AbhishekBarali/awesome-gamedev-agent-skills`
+- **One installer covers all of them.** `npx skills add gamedev-skills/awesome-gamedev-agent-skills`
   detects the agents you have installed and copies the skills (router included) to the right place.
 - **The skills here use only the portable core**, so a single tree works in every agent — no
   per-tool variants.
@@ -28,13 +28,13 @@ Skills ecosystem. It auto-detects your agent(s) and writes skills to each one's 
 
 ```bash
 # install the router + all 66 skills into whatever agent(s) you have
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills
+npx skills add gamedev-skills/awesome-gamedev-agent-skills
 
 # preview without installing
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills --list
+npx skills add gamedev-skills/awesome-gamedev-agent-skills --list
 
 # target a specific agent, and/or install globally for every project
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills -a cursor -g
+npx skills add gamedev-skills/awesome-gamedev-agent-skills -a cursor -g
 ```
 
 This repo ships a `.claude-plugin/marketplace.json`, which the CLI also reads, so the master

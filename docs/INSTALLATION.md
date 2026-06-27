@@ -34,15 +34,15 @@ router plus all 66) into each one's skills directory — no clone required:
 
 ```bash
 # install into whatever agent(s) you have
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills
+npx skills add gamedev-skills/awesome-gamedev-agent-skills
 
 # preview the skill list without installing anything
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills --list
+npx skills add gamedev-skills/awesome-gamedev-agent-skills --list
 
 # target one agent · install globally for all projects · grab a subset
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills -a cursor
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills -g
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills -s godot-tilemap -s platformer
+npx skills add gamedev-skills/awesome-gamedev-agent-skills -a cursor
+npx skills add gamedev-skills/awesome-gamedev-agent-skills -g
+npx skills add gamedev-skills/awesome-gamedev-agent-skills -s godot-tilemap -s platformer
 ```
 
 Companions: `npx skills list` (what's installed), `npx skills update` (pull latest), and
@@ -56,7 +56,7 @@ This repo is a Claude Code plugin marketplace (see [`.claude-plugin/marketplace.
 so you can install it without cloning or copying files. Add the marketplace once:
 
 ```bash
-claude plugin marketplace add AbhishekBarali/awesome-gamedev-agent-skills
+claude plugin marketplace add gamedev-skills/awesome-gamedev-agent-skills
 ```
 
 Easiest — install the router and all 66 skills in one command:
@@ -125,7 +125,7 @@ cp -R skills/godot/godot-tilemap .agents/skills/
 Gemini CLI and Codex can also be targeted by the universal CLI, no clone needed:
 
 ```bash
-npx skills add AbhishekBarali/awesome-gamedev-agent-skills -a gemini-cli   # or: -a codex
+npx skills add gamedev-skills/awesome-gamedev-agent-skills -a gemini-cli   # or: -a codex
 ```
 
 - **Gemini CLI:** manage and verify with `/skills`; activation prompts for consent.
@@ -160,7 +160,7 @@ Keep `description` ≤ 200 characters so it is not truncated by the upload UI.
 ## Cursor / Windsurf / Cline (native skills)
 
 These editors read `SKILL.md` natively — there is no rule-file conversion. The simplest install is
-the universal CLI (`npx skills add AbhishekBarali/awesome-gamedev-agent-skills -a cursor`; swap in
+the universal CLI (`npx skills add gamedev-skills/awesome-gamedev-agent-skills -a cursor`; swap in
 `windsurf` or `cline`). To place files by hand:
 
 ```bash
